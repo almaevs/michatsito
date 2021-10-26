@@ -1,4 +1,4 @@
-var socket = io.connect('');
+var socket = io.connect('windows.location.hostname');
 var list = document.querySelector('#lista-users');
 var username = window.location.pathname.replace('/chat/', '');
 var clientes = [];
