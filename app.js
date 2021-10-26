@@ -1,13 +1,15 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 var app = require('express')();
+var bodyParser=require('body-parser');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 var clientes = [];
 
+var app=express();
+
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 port=process.env.PORT||8080
 server.listen(port, () => console.log('Servidor iniciado en 8080'));
